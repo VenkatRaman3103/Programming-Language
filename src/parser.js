@@ -14,13 +14,14 @@ const isOpeningParenthesis = (intput) => intput == '(';
 const isClosingParenthesis = (intput) => intput == ')';
 
 const isParenthesis = (input) =>
-  isOpeningParenthesis(input) || isClosingParenthesis(input);
+    isOpeningParenthesis(input) || isClosingParenthesis(input);
 
-module.exporst = {
-  isLetter,
-  isNumber,
-  isWhitespace,
-  isOperators,
-  isOpeningParenthesis,
-  isClosingParenthesis,
+module.exports = {
+    isLetter,
+    isNumber,
+    isWhitespace,
+    isOperators,
+    isOpeningParenthesis,
+    isClosingParenthesis,
+    isParenthesis,
 };
