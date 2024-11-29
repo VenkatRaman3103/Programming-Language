@@ -13,12 +13,36 @@ function tokenizer(input) {
     let curser = 0;
 
     while (curser < input.length) {
-        const char = input[curser];
+        const character = input[curser];
 
-        if (isParenthesis(char)) {
+        if (isParenthesis(character)) {
             tokens.push({
                 type: 'Parenthesis',
-                value: char,
+                value: character,
+            });
+
+            curser++;
+            continue;
+        }
+
+        if (isWhitespace(input)) {
+            curser++;
+            continue;
+        }
+
+        if (isLetter(character)) {
+            tokens.push({
+                type: 'Letter',
+                value: character,
+            });
+            curser++;
+            continue;
+        }
+
+        if (isNumber(character)) {
+            tokens.push({
+                type: 'Number',
+                value: character,
             });
 
             curser++;
@@ -30,6 +54,8 @@ function tokenizer(input) {
 
     return tokens;
 }
+
+// console.log(tokenizer('sdf'));
 
 module.exports = {
     tokenizer,
