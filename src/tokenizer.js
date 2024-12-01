@@ -6,7 +6,8 @@ const {
     isOpeningParenthesis,
     isClosingParenthesis,
     isParenthesis,
-} = require('./parser');
+    isQuote,
+} = require('./identify');
 
 function tokenizer(input) {
     let tokens = [];
@@ -25,37 +26,74 @@ function tokenizer(input) {
             continue;
         }
 
-        if (isWhitespace(input)) {
+        if (isWhitespace(character)) {
             curser++;
             continue;
         }
 
         if (isLetter(character)) {
+            let word = character;
+
+            curser++;
+
+            while (isLetter(input[curser]) && curser < input.length) {
+                word += input[curser];
+                curser++;
+            }
+
             tokens.push({
                 type: 'Letter',
-                value: character,
+                value: word,
             });
-            curser++;
+
             continue;
         }
 
         if (isNumber(character)) {
+            let numbers = character;
+
+            curser++;
+
+            while (isNumber(input[curser]) && curser < input.length) {
+                numbers += input[curser];
+                curser++;
+            }
+
             tokens.push({
                 type: 'Number',
-                value: character,
+                value: numbers,
+            });
+
+            continue;
+        }
+
+        if (isQuote(character)) {
+            let string = '';
+
+            curser++;
+
+            while (!isQuote(input[curser]) && curser < input.length) {
+                string += input[curser];
+                curser++;
+            }
+
+            tokens.push({
+                type: 'String',
+                value: string,
             });
 
             curser++;
             continue;
         }
 
-        curser++;
+        throw new Error(`${character} is not a valid syntax`);
     }
 
     return tokens;
 }
 
-// console.log(tokenizer('sdf'));
+// console.log(tokenizer('123 asd'), '//<==');
+// console.log(tokenizer('"some123"'));
 
 module.exports = {
     tokenizer,

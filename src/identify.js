@@ -16,6 +16,8 @@ const isClosingParenthesis = (intput) => intput == ')';
 const isParenthesis = (input) =>
     isOpeningParenthesis(input) || isClosingParenthesis(input);
 
+const isQuote = (input) => input == '"';
+
 module.exports = {
     isLetter,
     isNumber,
@@ -24,4 +26,5 @@ module.exports = {
     isOpeningParenthesis,
     isClosingParenthesis,
     isParenthesis,
+    isQuote,
 };
