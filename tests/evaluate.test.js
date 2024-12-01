@@ -34,4 +34,10 @@ describe(evaluate, () => {
 
         expect(evaluate(ast)).toBe(6);
     });
+
+    it('should able to look for the identifier', () => {
+        const ast = { type: 'Identifier', name: 'pi' };
+
+        expect(evaluate(ast)).toBe(3.141592653589793);
+    });
 });

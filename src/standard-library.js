@@ -15,7 +15,7 @@ const multiply = all(multiplication);
 const modulo = all(modulos);
 const divide = all(division);
 const log = console.log;
-const pi = Math.pi;
+const pi = Math.PI;
 
 const environment = {
     add,
