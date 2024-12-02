@@ -19,7 +19,7 @@ const pi = Math.PI;
 const max = (...args) => Math.max(...args);
 const min = (...args) => Math.min(...args);
 
-const environment = {
+export const environment = {
     add,
     subtract,
     multiply,
@@ -29,8 +29,4 @@ const environment = {
     pi,
     max,
     min,
-};
-
-module.exports = {
-    environment,
 };

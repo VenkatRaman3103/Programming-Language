@@ -1,5 +1,5 @@
-const { isNumber } = require('../src/identify');
-const { tokenizer } = require('../src/tokenizer');
+import { isNumber } from '../src/identify';
+import { tokenizer } from '../src/tokenizer';
 
 describe('Tokenizer', () => {
     it('should return an array of tokens', () => {

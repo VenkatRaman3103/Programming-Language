@@ -18,7 +18,7 @@ const isParenthesis = (input) =>
 
 const isQuote = (input) => input == '"';
 
-module.exports = {
+export {
     isLetter,
     isNumber,
     isWhitespace,

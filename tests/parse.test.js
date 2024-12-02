@@ -1,12 +1,12 @@
-const { parse } = require('../src/parse');
+const { parseTokens } = require('../src/parse');
 
-describe(parse, () => {
+describe(parseTokens, () => {
     it('should return the token with numericLiteral type', () => {
         const tokens = [{ type: 'Number', value: 2 }];
 
         const output = { type: 'NumericLiteral', value: 2 };
 
-        expect(parse(tokens)).toStrictEqual(output);
+        expect(parseTokens(tokens)).toStrictEqual(output);
     });
 
     it('should return the token with stringLiteral type', () => {
@@ -14,7 +14,7 @@ describe(parse, () => {
 
         const output = { type: 'StringLiteral', value: 'hello world' };
 
-        expect(parse(tokens)).toStrictEqual(output);
+        expect(parseTokens(tokens)).toStrictEqual(output);
     });
 
     it('should return the token with Identifiew type', () => {
@@ -22,7 +22,7 @@ describe(parse, () => {
 
         const output = { type: 'Identifier', value: 'x' };
 
-        expect(parse(tokens)).toStrictEqual(output);
+        expect(parseTokens(tokens)).toStrictEqual(output);
     });
 
     it('should return an AST for a basic data structure', () => {
@@ -43,7 +43,7 @@ describe(parse, () => {
             ],
         };
 
-        const result = parse(tokens);
+        const result = parseTokens(tokens);
 
         expect(result).toEqual(ast);
     });
@@ -79,7 +79,7 @@ describe(parse, () => {
             ],
         };
 
-        const result = parse(tokens);
+        const result = parseTokens(tokens);
 
         expect(result).toEqual(ast);
     });

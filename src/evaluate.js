@@ -1,4 +1,4 @@
-const { environment } = require('./standard-library');
+import { environment } from './standard-library.js';
 
 const apply = (node) => {
     const fn = environment[node.name];
@@ -14,7 +14,7 @@ const getIdentifier = (node) => {
     }
 };
 
-const evaluate = (node) => {
+export const evaluate = (node) => {
     if (node.type == 'CallExpression') {
         return apply(node);
     }
@@ -26,18 +26,14 @@ const evaluate = (node) => {
     if (node.value) return node.value;
 };
 
-const ast = {
-    type: 'CallExpression',
-    name: 'max',
-    arguments: [
-        { type: 'NumericLiteral', value: 12 },
-        { type: 'NumericLiteral', value: 6 },
-    ],
-};
-
-console.log(getIdentifier(ast));
-console.log(evaluate(ast));
-
-module.exports = {
-    evaluate,
-};
+// const ast = {
+//     type: 'CallExpression',
+//     name: 'max',
+//     arguments: [
+//         { type: 'NumericLiteral', value: 12 },
+//         { type: 'NumericLiteral', value: 6 },
+//     ],
+// };
+//
+// console.log(getIdentifier(ast));
+// console.log(evaluate(ast));

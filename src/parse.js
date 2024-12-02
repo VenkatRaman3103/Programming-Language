@@ -1,5 +1,6 @@
-const { isOpeningParenthesis, isClosingParenthesis } = require('./identify');
-const { pop, peek } = require('./utils');
+import { isOpeningParenthesis, isClosingParenthesis } from './identify.js';
+
+import { pop, peek } from './utils.js';
 
 const parenthesize = (tokens) => {
     const token = pop(tokens);
@@ -54,21 +55,5 @@ function parse(tokens) {
     }
 }
 
-const tokens = [
-    { type: 'Parenthesis', value: '(' },
-    { type: 'Name', value: 'add' },
-    { type: 'Number', value: 2 },
-    { type: 'Number', value: 3 },
-    { type: 'Parenthesis', value: '(' },
-    { type: 'Name', value: 'add' },
-    { type: 'Number', value: 2 },
-    { type: 'Number', value: 3 },
-    { type: 'Parenthesis', value: ')' },
-    { type: 'Parenthesis', value: ')' },
-];
-
-// console.log(parse(parenthesize(tokens)));
-
-module.exports = {
-    parse: (tokens) => parse(parenthesize(tokens)),
-};
+// Exporting parse function after applying parenthesize
+export const parseTokens = (tokens) => parse(parenthesize(tokens));

@@ -1,4 +1,4 @@
-const {
+import {
     isLetter,
     isNumber,
     isWhitespace,
@@ -7,9 +7,9 @@ const {
     isClosingParenthesis,
     isParenthesis,
     isQuote,
-} = require('./identify');
+} from './identify.js';
 
-function tokenizer(input) {
+export function tokenizer(input) {
     let tokens = [];
     let curser = 0;
 
@@ -94,7 +94,3 @@ function tokenizer(input) {
 
 // console.log(tokenizer('123 asd'), '//<==');
 // console.log(tokenizer('"some123"'));
-
-module.exports = {
-    tokenizer,
-};
