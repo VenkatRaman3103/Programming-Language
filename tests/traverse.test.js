@@ -14,7 +14,7 @@ describe(traverse, () => {
         const visitor = {
             CallExpression: {
                 enter: (node) => {
-                    node.name = 'subtract';
+                    node.name = 'hello world';
                 },
             },
             NumericLiteral: {
@@ -26,6 +26,6 @@ describe(traverse, () => {
 
         traverse(ast, visitor);
 
-        expect(ast.name).toBe('subtract');
+        expect(ast.name).toBe('hello world');
     });
 });
