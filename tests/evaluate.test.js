@@ -40,4 +40,17 @@ describe(evaluate, () => {
 
         expect(evaluate(ast)).toBe(3.141592653589793);
     });
+
+    it('should able to find the maximum value from the arguments', () => {
+        const ast = {
+            type: 'CallExpression',
+            name: 'max',
+            arguments: [
+                { type: 'NumericLiteral', value: 12 },
+                { type: 'NumericLiteral', value: 6 },
+            ],
+        };
+
+        expect(evaluate(ast)).toBe(12);
+    });
 });

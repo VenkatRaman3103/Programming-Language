@@ -16,6 +16,7 @@ const modulo = all(modulos);
 const divide = all(division);
 const log = console.log;
 const pi = Math.PI;
+const max = (...args) => Math.max(...args);
 
 const environment = {
     add,
@@ -25,6 +26,7 @@ const environment = {
     divide,
     log,
     pi,
+    max,
 };
 
 module.exports = {

@@ -26,8 +26,17 @@ const evaluate = (node) => {
     if (node.value) return node.value;
 };
 
-const ast = { type: 'Identifier', name: 'pi' };
+const ast = {
+    type: 'CallExpression',
+    name: 'max',
+    arguments: [
+        { type: 'NumericLiteral', value: 12 },
+        { type: 'NumericLiteral', value: 6 },
+    ],
+};
+
 console.log(getIdentifier(ast));
+console.log(evaluate(ast));
 
 module.exports = {
     evaluate,
