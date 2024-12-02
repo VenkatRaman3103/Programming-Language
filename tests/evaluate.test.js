@@ -53,4 +53,17 @@ describe(evaluate, () => {
 
         expect(evaluate(ast)).toBe(12);
     });
+
+    it('should able to find the minimum value from the arguments', () => {
+        const ast = {
+            type: 'CallExpression',
+            name: 'min',
+            arguments: [
+                { type: 'NumericLiteral', value: 12 },
+                { type: 'NumericLiteral', value: 6 },
+            ],
+        };
+
+        expect(evaluate(ast)).toBe(6);
+    });
 });
