@@ -7,7 +7,7 @@ const division = (a, b) => a / b;
 const all =
     (fn) =>
     (...list) =>
-        list.reduce(fn);
+        list.map(Number).reduce(fn);
 
 const add = all(addition);
 const subtract = all(subtraction);
