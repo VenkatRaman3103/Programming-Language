@@ -49,8 +49,8 @@ const visitor = {
 
 // const testNode = { type: 'NumericLiteral', value: 12 };
 
-console.log(traverse(ast, visitor));
+// console.log(traverse(ast, visitor));
 
-console.log(ast);
+// console.log(ast);
 
 module.exports = { traverse };
