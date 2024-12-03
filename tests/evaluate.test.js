@@ -1,4 +1,4 @@
-const { evaluate } = require('../src/evaluate.js');
+import { evaluate } from '../src/evaluate.js';
 
 describe(evaluate, () => {
     it('should able to evaluate single expression', () => {

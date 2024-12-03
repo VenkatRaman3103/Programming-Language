@@ -1,4 +1,4 @@
-const { traverse } = require('../src/traverse');
+import { traverse } from '../src/traverse';
 
 describe(traverse, () => {
     it('should traverse all the nodes in the ast tree and should able to change the values', () => {

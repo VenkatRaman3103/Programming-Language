@@ -1,4 +1,4 @@
-const { parseTokens } = require('../src/parse');
+import { parseTokens } from '../src/parse';
 
 describe(parseTokens, () => {
     it('should return the token with numericLiteral type', () => {

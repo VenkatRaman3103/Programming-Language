@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+import { parseAndEvaluate } from '../src/parse-and-evaluate.js';
+import { startRepl } from '../src/repl.js';
+import fs from 'fs/promises'; 
+
+async function main() {
+  const [command, ...args] = process.argv.slice(2);
+
+  if (!command) {
+    startRepl();
+    return;
+  }
+
+  if (command.toLowerCase() === 'run') {
+    try {
+      const file = await fs.readFile(args[0], 'utf-8'); 
+      const result = parseAndEvaluate(file);
+      console.log(result);
+    } catch (error) {
+      console.error('Error reading or processing the file:', error.message);
+    }
+  } else {
+    console.error(`Unknown command: ${command}`);
+  }
+}
+
+main().catch((error) => {
+  console.error('Unexpected error:', error.message);
+});

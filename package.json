@@ -4,13 +4,16 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "node src/repl.js",
         "test": "jest"
+    },
+    "bin": {
+        "teddy": "./bin/teddy"
     },
     "author": "",
     "license": "ISC",
     "description": "",
     "devDependencies": {
+        "@babel/core": "^7.26.0",
         "@babel/plugin-proposal-export-default-from": "^7.25.9",
         "@babel/plugin-transform-modules-commonjs": "^7.25.9",
         "@babel/preset-env": "^7.26.0",
