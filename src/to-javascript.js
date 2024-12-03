@@ -12,5 +12,18 @@ const babelVisitor = {
 
 export const toJavaScript = (ast) => {
     traverse(ast, babelVisitor);
+    // console.log(generate);
     return generate(ast).code;
 };
+
+// const ast = {
+//     type: 'CallExpression',
+//     name: 'variable',
+//     arguments: [
+//         { type: 'NumericLiteral', value: 12 },
+//         { type: 'NumericLiteral', value: 6 },
+//     ],
+// };
+
+// console.log(toJavaScript(ast), '<==');
+// console.log(ast);
