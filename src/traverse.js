@@ -19,7 +19,7 @@ const traverseArray = (array, parent, visitor) => {
     array.map((node) => traverseNode(node, parent, visitor));
 };
 
-const traverse = (node, visitor) => {
+export const traverse = (node, visitor) => {
     traverseNode(node, null, visitor);
 };
 
@@ -47,10 +47,8 @@ const visitor = {
     },
 };
 
-// const testNode = { type: 'NumericLiteral', value: 12 };
+const testNode = { type: 'NumericLiteral', value: 12 };
 
 // console.log(traverse(ast, visitor));
-
+//
 // console.log(ast);
-
-module.exports = { traverse };
