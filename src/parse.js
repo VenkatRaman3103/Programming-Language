@@ -3,6 +3,7 @@ import { isOpeningParenthesis, isClosingParenthesis } from './identify.js';
 import { pop, peek } from './utils.js';
 
 const parenthesize = (tokens) => {
+    // console.log(tokens);
     const token = pop(tokens);
 
     if (isOpeningParenthesis(token.value)) {
@@ -57,3 +58,17 @@ function parse(tokens) {
 
 // Exporting parse function after applying parenthesize
 export const parseTokens = (tokens) => parse(parenthesize(tokens));
+console.log(
+    parenthesize([
+        { type: 'Parenthesis', value: '(' },
+        { type: 'Number', value: '123' },
+        { type: 'Letter', value: 'and' },
+        { type: 'String', value: 'string' },
+        { type: 'Parenthesis', value: '(' },
+        { type: 'Number', value: '123' },
+        { type: 'Letter', value: 'and' },
+        { type: 'String', value: 'string' },
+        { type: 'Parenthesis', value: ')' },
+        { type: 'Parenthesis', value: ')' },
+    ]),
+);

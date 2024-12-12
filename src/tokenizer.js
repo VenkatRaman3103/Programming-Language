@@ -92,5 +92,6 @@ export function tokenizer(input) {
     return tokens;
 }
 
+console.log(tokenizer('(123 and "string")'));
 // console.log(tokenizer('123 asd'), '//<==');
 // console.log(tokenizer('"some123"'));
