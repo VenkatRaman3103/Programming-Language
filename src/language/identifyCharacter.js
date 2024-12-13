@@ -15,8 +15,8 @@ export function identifyCharacter(input) {
             type: 'number',
         },
         OPERATORS: {
-            regex: /[-+\/%]/,
-            type: 'operators',
+            regex: /[*\-+\/%]/,
+            type: 'operator',
         },
     };
 
@@ -35,3 +35,5 @@ export function identifyCharacter(input) {
 
     return identity;
 }
+
+console.log(identifyCharacter('-'));
